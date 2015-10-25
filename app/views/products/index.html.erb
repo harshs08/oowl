@@ -21,17 +21,17 @@
       <div id="container" class="shelf-img">
         <div class="row">
           <% @products.dress.each do |product| %>
-            <%= image_tag("#{product.image}", :class => "draggable") %>
+            <%= image_tag("#{product.image.url(:medium)}", :class => "draggable") %>
           <% end %>
         </div>
         <div class="row" id="furniture">
           <% @products.furniture.each do |product| %>
-            <%= image_tag("#{product.image}", :class => "draggable") %>
+            <%= image_tag("#{product.image.url(:medium)}", :class => "draggable") %>
           <% end %>
         </div>
         <div class="row">
           <% @products.others.each do |product| %>
-            <%= image_tag("#{product.image}", :class => "draggable") %>
+            <%= image_tag("#{product.image.url(:original)}", :class => "draggable") %>
           <% end %>
         </div>
       </div>
