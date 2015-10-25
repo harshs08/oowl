@@ -27,6 +27,7 @@ body {
 
 #container div#furniture {
   margin-top: -40px;
+  margin-bottom: 20px;
 }
 
     #minus-button {
@@ -54,7 +55,7 @@ body {
     
     #container .row {
       position: relative;
-      top: -30px;
+      top: -20px;
       padding-left: 90px;
       padding-bottom: 70px;
       

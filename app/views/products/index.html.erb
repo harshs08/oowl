@@ -9,7 +9,7 @@
 
   
   <div id="hands-free-mode" style="z-index:3;position:fixed;left:0;bottom:0px;">
-    <img id="myo-img" src="assets/oowl_myo_btn_normal.png">
+    <img id="myo-img" class="bigIMG" src="assets/oowl_myo_btn_normal.png">
   </div>
   
   <div id="minus-button">
@@ -17,23 +17,5 @@
   </div>
 
   <div id="wrapper" class="grid-img"> 
-    <div id="shelf-wrapper">
-      <div id="container" class="shelf-img">
-        <div class="row">
-          <% @products.dress.each do |product| %>
-            <%= image_tag("#{product.image.url(:medium)}", :class => "draggable") %>
-          <% end %>
-        </div>
-        <div class="row" id="furniture">
-          <% @products.furniture.each do |product| %>
-            <%= image_tag("#{product.image.url(:medium)}", :class => "draggable") %>
-          <% end %>
-        </div>
-        <div class="row">
-          <% @products.others.each do |product| %>
-            <%= image_tag("#{product.image.url(:original)}", :class => "draggable") %>
-          <% end %>
-        </div>
-      </div>
-    </div> 
+    <%= render "products" %>
   </div>

@@ -6,6 +6,10 @@ class ProductsController < ApplicationController
     @products = Product.order('created_at')
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
   def new
     @product = Product.new
   end
@@ -14,7 +18,11 @@ class ProductsController < ApplicationController
   def create
     @product = Product.create(product_params)
     if @product.save
-      render json: @product
+      # render json: @product
+      respond_to do |format|
+        format.js {render inline: "location.reload();" }
+      end
+      # return
     else
       render json: { success: false }
     end
