@@ -15,13 +15,13 @@ class ProductsController < ApplicationController
     if @product.save
       render json: @product
     else
-      render json: { success: false}
+      render json: { success: false }
     end
   end
 
   private
     def product_params
-      params.permit(:image, :name, :price, :image_link,
-        :dimensions, :height, :width)
+      params.permit(:image, :name, :price,
+        :dimensions, :height, :width, :category)
     end
 end

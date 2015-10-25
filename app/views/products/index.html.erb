@@ -1,8 +1,5 @@
-<h1>
-Hello
-</h1>
-<style>
-  #draggable { width: 150px; height: 150px; padding: 0.5em; }
+  <style>
+    #draggable { width: 150px; height: 150px; padding: 0.5em; }
   </style>
   <script>
   $(function() {
@@ -10,34 +7,27 @@ Hello
   });
 </script>
 
-  <a href="#">
-    <%= image_tag("oowl_logo_white.png", :id => "logo") %>
-  </a>
   
-  
-  
+  <div id="hands-free-mode" style="z-index:3;position:fixed;left:0;bottom:0px;">
+    <img id="myo-img" src="assets/oowl_myo_btn_normal.png">
+  </div>
   
   <div id="minus-button">
-    <%= image_tag("minus.jpg", :class => "bigIMG") %>
+    <img src="assets/oowl_close_btn_normal.png" class="bigIMG">
   </div>
 
   <div id="wrapper" class="grid-img"> 
     <div id="shelf-wrapper">
       <div id="container" class="shelf-img">
         <div class="row">
-          <%= image_tag("1888368.jpeg", :class => "draggable") %>
-          <%= image_tag("926965.jpeg", :class => "draggable") %>
-          <%= image_tag("3.jpg", :class => "draggable") %>
+          <% @products.dress.each do |product| %>
+            <%= image_tag("#{product.image}", :class => "draggable") %>
+          <% end %>
         </div>
-        <div class="row">
-          <%= image_tag("4.jpg", :class => "draggable") %>
-          <%= image_tag("5.jpg", :class => "draggable") %>
-          <%= image_tag("6.jpg", :class => "draggable") %>
-        </div>
-        <div class="row">
-          <%= image_tag("7.jpg", :class => "draggable") %>
-          <%= image_tag("8.jpg", :class => "draggable") %>
-          <%= image_tag("9.jpg", :class => "draggable") %>
+        <div class="row" id="furniture">
+          <% @products.furniture.each do |product| %>
+            <%= image_tag("#{product.image}", :class => "draggable") %>
+          <% end %>
         </div>
       </div>
     </div> 
