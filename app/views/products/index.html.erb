@@ -29,6 +29,11 @@
             <%= image_tag("#{product.image}", :class => "draggable") %>
           <% end %>
         </div>
+        <div class="row">
+          <% @products.others.each do |product| %>
+            <%= image_tag("#{product.image}", :class => "draggable") %>
+          <% end %>
+        </div>
       </div>
     </div> 
   </div>
