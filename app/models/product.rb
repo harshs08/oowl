@@ -8,5 +8,6 @@ class Product < ActiveRecord::Base
 
   scope :furniture, -> { where(category: 'furniture') }
   scope :dress, -> { where(category: 'dress') }
+  scope :miscel, -> { where(category: 'miscel') }
   scope :others, -> { where("category IS NULL") }
 end

@@ -16,6 +16,14 @@
           <% end %>
         </div>
         <div class="row">
+          <% @products.miscel.each_with_index do |product, idx| %>
+            <div class="img">
+            <%= image_tag("#{product.image.url(:original)}", :class => "draggable", :data => { :height => product.height, :width => product.width, :price => product.price, :name => product.name, :pos => product.id }) %>
+            <% %>
+            </div>
+          <% end %>
+        </div>
+        <div class="row">
           <% @products.others.each_with_index do |product, idx| %>
             <div class="img">
             <%= image_tag("#{product.image.url(:original)}", :class => "draggable", :data => { :height => product.height, :width => product.width, :price => product.price, :name => product.name, :pos => product.id }) %>

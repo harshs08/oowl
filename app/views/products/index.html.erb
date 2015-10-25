@@ -1,12 +1,33 @@
   <style>
+    body{cursor: none;}
     #draggable { width: 150px; height: 150px; padding: 0.5em; }
+    .calibration-background{
+      position: absolute;
+      width: 100%;
+      height: 150%;
+      margin-top: -10%;
+      background-color: black;
+      z-index: 5;
+    }
+    .calibration-up{
+      position: absolute;
+      z-index: 10;
+    }
+    .calibration-down{
+      position: absolute;
+      z-index: 10;
+      display: none;
+    }
   </style>
   <script>
   $(function() {
     $( ".draggable" ).draggable();
   });
-</script>
+  </script>
 
+  <div class="calibration-background"></div>
+  <img class="calibration-down" src="assets/oowl_project_pointer_up.png">
+  <img class="calibration-up" src="assets/oowl_project_pointer_down.png">
   
   <div id="hands-free-mode" style="z-index:3;position:fixed;left:0;bottom:0px;">
     <img id="myo-img" class="bigIMG" src="assets/oowl_myo_btn_normal.png">
