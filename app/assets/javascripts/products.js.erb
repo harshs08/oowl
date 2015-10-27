@@ -12,7 +12,7 @@ $(document).ready(function() {
       document.getElementsByClassName('calibration-down')[0].style.display = 'none';
       document.getElementsByClassName('calibration-background')[0].style.display = 'none';
       document.getElementsByTagName('body')[0].style.cursor = 'auto';
-      alert(Math.round(Math.sqrt(Math.pow(e.x-calibrationState.x, 2)+Math.pow(e.y-calibrationState.y, 2))));
+      //alert(Math.round(Math.sqrt(Math.pow(e.x-calibrationState.x, 2)+Math.pow(e.y-calibrationState.y, 2))));
       calibrationState.count++;
     }else{
       document.getElementsByClassName('calibration-up')[0].style.display = 'none';
@@ -88,13 +88,14 @@ $(document).ready(function() {
     });
   
   var handsFreeMode = false;
+  var left_margin='-50%';
+  var top_margin='50%';
   
   $('#hands-free-mode img').click( function() {
     if (handsFreeMode) {
     handsFreeMode = false;
-      $('img:not(#myo-img)').css('display','initial');
-        
-          $('#wrapper').addClass("grid-img");
+      $('img:not(#myo-img)').css('display','initial');    
+        $('#wrapper').addClass("grid-img");
         $('#container').addClass("shelf-img");
     }
     else 
@@ -102,16 +103,16 @@ $(document).ready(function() {
         /* ENTER HANDS FREE MODE: Hide everything except one image */
         $('img:not(#myo-img)').css('display','none');
         
-          $('#wrapper').removeClass("grid-img");
+        $('#wrapper').removeClass("grid-img");
         $('#container').removeClass("shelf-img");
         /* LOAD FIRST IMAGE */
-        $('#container > div:nth-child(1) > div:nth-child(1) > img').addClass('bigIMG');
-        $('#container > div:nth-child(1) > div:nth-child(1) > img').css('position','absolute');
-        $('#container > div:nth-child(1) > div:nth-child(1) > img').css('height','initial');
-        $('#container > div:nth-child(1) > div:nth-child(1) > img').css('width','initial');
+        // $('#container > div:nth-child(1) > div:nth-child(1) > img').addClass('bigIMG');
+        $('#container > div:nth-child(1) > div:nth-child(1) > img').css('position','fixed');
+        $('#container > div:nth-child(1) > div:nth-child(1) > img').css('height','650');
+        $('#container > div:nth-child(1) > div:nth-child(1) > img').css('width','500');
         $('#container > div:nth-child(1) > div:nth-child(1) > img').css('display','initial');
-        $('#container > div:nth-child(1) > div:nth-child(1) > img').css('margin-left','-50%');
-        $('#container > div:nth-child(1) > div:nth-child(1) > img').css('margin-bottom','-100%');
+        $('#container > div:nth-child(1) > div:nth-child(1) > img').css('top','500');
+        $('#container > div:nth-child(1) > div:nth-child(1) > img').css('left','0');
         /*if ($(this).attr('alt') == 'rotate') {
         $(this).css('transform','rotate(90deg)');
         }
@@ -124,25 +125,25 @@ $(document).ready(function() {
                 var gesture = xhr.responseText;
                 if(gesture.indexOf('right') >= 0){
                   console.log(gesture);
-                  ('img:not(#myo-img)').css('display','none');
+                  $('img:not(#myo-img)').css('display','none');
                   if(clickNum == 1){
-                   $('#container > div:nth-child(1) > div:nth-child(2) > img').addClass('bigIMG');
-                  $('#container > div:nth-child(1) > div:nth-child(2) > img').css('position','absolute');
-                    $('#container > div:nth-child(1) > div:nth-child(2) > img').css('height','initial');
-        $('#container > div:nth-child(1) > div:nth-child(2) > img').css('width','initial');
-        $('#container > div:nth-child(1) > div:nth-child(2) > img').css('display','initial');
-        $('#container > div:nth-child(1) > div:nth-child(2) > img').css('margin-left','-50%');
-        $('#container > div:nth-child(1) > div:nth-child(2) > img').css('margin-bottom','-100%');
+                    // $('#container > div:nth-child(1) > div:nth-child(2) > img').addClass('bigIMG');
+                    $('#container > div:nth-child(1) > div:nth-child(2) > img').css('position','fixed');
+                    $('#container > div:nth-child(1) > div:nth-child(2) > img').css('height','650');
+                    $('#container > div:nth-child(1) > div:nth-child(2) > img').css('width','300');
+                    $('#container > div:nth-child(1) > div:nth-child(2) > img').css('display','initial');
+                    $('#container > div:nth-child(1) > div:nth-child(2) > img').css('top','500');
+                    $('#container > div:nth-child(1) > div:nth-child(2) > img').css('left','0');
                     clickNum++;
                   }
-                   if(clickNum == 2){
-                   $('#container > div:nth-child(1) > div:nth-child(3) > img').addClass('bigIMG');
-                  $('#container > div:nth-child(1) > div:nth-child(3) > img').css('position','absolute');
-                    $('#container > div:nth-child(1) > div:nth-child(3) > img').css('height','initial');
-                  $('#container > div:nth-child(1) > div:nth-child(3) > img').css('width','initial');
-                  $('#container > div:nth-child(1) > div:nth-child(3) > img').css('display','initial');
-          $('#container > div:nth-child(1) > div:nth-child(3) > img').css('margin-left','-50%');
-        $('#container > div:nth-child(1) > div:nth-child(3) > img').css('margin-bottom','-100%');
+                  if(clickNum == 2){
+                    // $('#container > div:nth-child(1) > div:nth-child(3) > img').addClass('bigIMG');
+                    $('#container > div:nth-child(1) > div:nth-child(3) > img').css('position','fixed');
+                    $('#container > div:nth-child(1) > div:nth-child(3) > img').css('height','650');
+                    $('#container > div:nth-child(1) > div:nth-child(3) > img').css('width','300');
+                    $('#container > div:nth-child(1) > div:nth-child(3) > img').css('display','initial');
+                    $('#container > div:nth-child(1) > div:nth-child(3) > img').css('top','500');
+                    $('#container > div:nth-child(1) > div:nth-child(3) > img').css('left','0');
                     clickNum++;
                   }
 
@@ -152,16 +153,15 @@ $(document).ready(function() {
                   /* LOAD NEXT IMAGE */
                 }else if(gesture.indexOf('select') >= 0){
                   console.log(gesture);
-                  /* BUY ITEM */
+                  alert("Are you sure would like to Buy this item for 22.99");
                 }else if(gesture.indexOf('back') >= 0){
                   console.log(gesture);
                   handsFreeMode = false;
                   /* EXIT HANDS FREE */
                   /* Restore everything */
-                            $('img').css("display","initial");
-          $('#wrapper').addClass('grid-img');
-        $('#container').addClass('shelf-img');
-                  
+                  $('img').css("display","initial");
+                  $('#wrapper').addClass('grid-img');
+                  $('#container').addClass('shelf-img');           
                 }
             }
         }
